@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="MapDirectives">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="app/code.js"></script>
+    <script src="http://maps.googleapis.com/maps/api/js"></script>
+    <style>
+    #map {
+    	width:500px;
+    	height:380px;
+    	display: block;
+    }
+    </style>
+</head>
+<body ng-controller="MapCtrl as mapctrl">
+    <map id="map" center="mapctrl.mapOptions.centr" zoom="mapctrl.mapOptions.zoom"></map>
+    <p>Change zoom:</p>
+    <button ng-click="mapctrl.zoomChangeApplyUp()">Click Up</button>
+    <button ng-click="mapctrl.zoomChangeApplyDown()">Click Down</button>
+    <p>Current zoom: <span ng-bind="mapctrl.mapOptions.zoom"></span></p>
+</body>
+</html>
